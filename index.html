@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruit Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f9f9f9, #d1f7d1);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    h1 {
+      color: #2e7d32;
+    }
+    p {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍎 Welcome to the Fruit Chatbot</h1>
+  <p>Chat with our assistant below for fruit information, recipes, and more!</p>
+
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "5340426d-a172-4254-bb7a-faf0e5f6263b", // The ID of this integration.
+      region: "eu-de", // The region your integration is hosted in.
+      serviceInstanceID: "6af436ee-d964-4855-94ac-5d73460f828f", // The ID of your service instance.
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function() {
+      const t = document.createElement('script');
+      t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</body>
+</html>
